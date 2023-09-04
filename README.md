@@ -1,4 +1,4 @@
-# AdventOfCodeStarter
+# Advent of Code 2022 - TypeScript
 
 [![](https://markdown-videos.deta.dev/youtube/2P4N4ihe_lY)](https://youtu.be/2P4N4ihe_lY)
 
