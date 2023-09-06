@@ -4,9 +4,8 @@ import {getMaxCalories} from "../../shared/day-1/getMaxCalories";
 
 export async function day1a(dataPath?: string) {
   const data = await readData(dataPath);
-  const result = getMaxCalories(data, 1);
 
-  return result;
+  return getMaxCalories(data, 1);
 }
 
 // don't change below this line

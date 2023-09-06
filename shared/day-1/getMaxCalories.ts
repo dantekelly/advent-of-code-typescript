@@ -1,9 +1,4 @@
-
-interface GetMaxCalories {
-    caloriesArray: number[];
-    limit: number;
-}
-export const getMaxCalories = (data, number) => {
+export const getMaxCalories = (data: string[], limit: number) => {
     let elfCalories: number[] = [];
     let runningCalories: number = 0;
 
@@ -12,12 +7,15 @@ export const getMaxCalories = (data, number) => {
             elfCalories.push(runningCalories);
             runningCalories = 0;
 
-            // Move to let i
             continue;
         }
 
         let currentCalories = parseInt(data[i]);
         runningCalories += currentCalories;
+
+        if (i === data.length - 1) {
+            elfCalories.push(runningCalories);
+        }
     }
 
     let sortedCalories = elfCalories.sort((a,b) => b - a);
@@ -26,5 +24,5 @@ export const getMaxCalories = (data, number) => {
         return 0;
     }
 
-    return number === 1 ? sortedCalories[0] : sortedCalories.slice(0, number - 1).reduce((acc, currVal) => acc + currVal);
+    return limit === 1 ? sortedCalories[0] : sortedCalories.slice(0, limit).reduce((acc, currVal) => acc + currVal);
 }

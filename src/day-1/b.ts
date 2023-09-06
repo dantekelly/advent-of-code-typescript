@@ -1,9 +1,11 @@
-import { readData } from '../utils';
+import {readData} from '../utils';
 import chalk from 'chalk';
+import {getMaxCalories} from "../../shared/day-1/getMaxCalories";
 
 export async function day1b(dataPath?: string) {
   const data = await readData(dataPath);
-  return 0;
+
+  return getMaxCalories(data, 3);
 }
 
 // don't change below this line
